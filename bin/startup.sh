@@ -26,12 +26,16 @@ if [ -n "${PANDORA_API}" ]; then
   PANDORA_ARGS="${PANDORA_ARGS} -a"
 fi
 
-if [ -n "${PANDORA_SENTRY}" ]; then
-  PANDORA_ARGS="${PANDORA_ARGS} --sentry"
+if [ -n "${PANDORA_LOGIN_LOCAL}" ]; then
+  PANDORA_ARGS="${PANDORA_ARGS} -l"
 fi
 
 if [ -n "${PANDORA_VERBOSE}" ]; then
   PANDORA_ARGS="${PANDORA_ARGS} -v"
+fi
+
+if [ -n "${PANDORA_THREADS}" ]; then
+  PANDORA_ARGS="${PANDORA_ARGS} --threads ${PANDORA_THREADS}"
 fi
 
 if [ -n "${PANDORA_CLOUD}" ]; then
